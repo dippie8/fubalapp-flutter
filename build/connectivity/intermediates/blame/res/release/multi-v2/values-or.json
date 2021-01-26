@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/res/merged/release/values-or/values-or.xml",
+            "map": [
+                {
+                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-or/values-or.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/incremental/mergeReleaseResources/merged.dir/values-or/values-or.xml",
+            "map": [
+                {
+                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-or/values-or.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

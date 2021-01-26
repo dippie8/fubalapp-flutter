@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/res/merged/release/drawable-hdpi-v4/notification_bg_normal.9.png",
+        "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/res/merged/release/drawable-hdpi-v4/notification_bg_low_normal.9.png",
+        "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/res/merged/release/drawable-hdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/res/merged/release/drawable-hdpi-v4/notification_bg_normal_pressed.9.png",
+        "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/res/merged/release/drawable-hdpi-v4/notify_panel_notification_icon_bg.png",
+        "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    }
+]
