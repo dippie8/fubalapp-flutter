@@ -1,4 +1,4 @@
-#Wed Jan 20 18:07:56 CET 2021
+#Sun May 30 15:50:21 CEST 2021
 base.0=/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/transforms/r8/release/0/classes.dex
-path.0=classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

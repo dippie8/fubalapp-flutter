@@ -7,50 +7,56 @@ import 'package:fubalapp_mobile/utils/ColorConverter.dart';
 class StandingView extends StatelessWidget {
 
 
-  DataTable _data;
+  // DataTable _data;
+  Widget _data;
   ColorConverter colorConverter = ColorConverter();
 
-  StandingView(List<Standing> standings) {
-    this._data = DataTable(
+  StandingView(List<Standing> standings, bool standingModePercentage, Function onTapCallback) {
 
-      columns: const <DataColumn>[
-        DataColumn(
-            label: Icon(
-              AntDesign.staro,
-              color: Colors.grey,
-            )
-        ),
-        DataColumn(
-          label: Text(
-            'NOME',
+    _data = GestureDetector(
+      child: DataTable(
+        columns: const <DataColumn>[
+          DataColumn(
+              numeric: true,
+              label: Icon(
+                AntDesign.staro,
+                color: Colors.grey,
+              ),
           ),
-        ),
-        DataColumn(
-          numeric: true,
-          label: Text(
-            'W/TOT',
+          DataColumn(
+            label: Text(
+              'NOME',
+            ),
           ),
-        ),
-        DataColumn(
-          numeric: true,
-          label: Text(
-            'ELO',
+          DataColumn(
+            numeric: true,
+            label: Text(
+              "W/TOT",
+            ),
           ),
-        ),
-      ],
-      rows: standings.map<DataRow>((e) => DataRow(
-        cells: <DataCell>[
-          DataCell(
-              Icon(
-                AntDesign.star,
-                color: colorConverter.hexToColor(e.color),
-              )
+          DataColumn(
+            numeric: true,
+            label: Text(
+              'ELO',
+            ),
           ),
-          DataCell(Text(e.name)),
-          DataCell(Text(e.win.toString() + "/" + e.tot.toString())),
-          DataCell(Text(e.elo.toString())),
         ],
-      )).toList(),
+        rows: standings.map<DataRow>((e) => DataRow(
+          cells: <DataCell>[
+            DataCell(
+                Icon(
+                  AntDesign.star,
+                  color: colorConverter.hexToColor(e.color),
+                )
+            ),
+            DataCell(Text(e.name)),
+            //DataCell(e.tot == 0 ?  Text("0/0\n0%") : Text(e.win.toString() + "/" + e.tot.toString() + " " +(e.win/e.tot*100).toInt().toString()+"%")),
+            standingModePercentage ? DataCell(Text( e.tot == 0 ? "0%" : (e.win/e.tot*100).toInt().toString()+"%") ) : DataCell(Text(e.win.toString() + "/" + e.tot.toString())),
+            DataCell(Text(e.elo.toString())),
+          ],
+        )).toList(),
+      ),
+      onTap: onTapCallback,
     );
   }
 

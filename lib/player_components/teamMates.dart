@@ -40,6 +40,7 @@ class Teammates extends StatelessWidget {
             itemCount: teammates.length,
             itemBuilder: (BuildContext context, int index) => TeamMateCard(teammates[index]),
             itemWidth: 320.0,
+            itemHeight: 320.0,
             layout: SwiperLayout.STACK,
           ),
         )

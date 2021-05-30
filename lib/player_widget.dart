@@ -45,7 +45,7 @@ class _PlayerState extends State<Player> {
           winPie(),
           otherPlayers(),
           lastMatch(),
-          SliverToBoxAdapter(child: SizedBox(height: 40))
+          SliverToBoxAdapter(child: SizedBox(height: 100))
         ],
       ),
       controller: _refreshController,

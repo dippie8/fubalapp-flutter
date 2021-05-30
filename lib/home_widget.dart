@@ -4,34 +4,69 @@ import 'package:flutter/services.dart';
 import 'package:fubalapp_mobile/league_widget.dart';
 import 'package:fubalapp_mobile/player_widget.dart';
 import 'addGame_widget.dart';
-import 'placeholder_widget.dart';
-import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
 
 GlobalKey globalKey = GlobalKey();
 
 class Home extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _HomeState();
   }
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+  AnimationController _animationController;
+  Animation<double> animation;
+  CurvedAnimation curve;
+  PageController _pageController;
+
   int _currentIndex = 0;
-  final List<Widget> _children = [
-    League(),
 
-    /* null containers */
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.white),
-    /* null containers */
-
-    Player(),
-  ];
+  List<Widget> _children = [];
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+
+  void initState() {
+    super.initState();
+    _children = [
+      League(),
+      Player(),
+    ];
+    _pageController = PageController();
+    _animationController = AnimationController(
+      duration: Duration(seconds: 1),
+      vsync: this,
+    );
+    curve = CurvedAnimation(
+      parent: _animationController,
+      curve: Interval(
+        0.5,
+        1.0,
+        curve: Curves.fastOutSlowIn,
+      ),
+    );
+    animation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(curve);
+
+    Future.delayed(
+      Duration(seconds: 1),
+          () => _animationController.forward(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,50 +83,60 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       key: _scaffoldKey,
+      extendBody: true,
       backgroundColor: Colors.blueGrey.shade50,
-      body: _children[_currentIndex],
-      floatingActionButton: FloatingActionButton(
-        onPressed: addGame,
-        child: Icon(Icons.add),
-        backgroundColor: Colors.tealAccent.shade400,
+      body: PageView(
+          physics:new NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          allowImplicitScrolling: false,
+          onPageChanged: (index) {
+            setState(() => _currentIndex = index);
+          },
+          children: _children
+      ),
+      floatingActionButton: ScaleTransition(
+        scale: animation,
+        child: FloatingActionButton(
+          onPressed: addGame,
+          child: Icon(Icons.add),
+          backgroundColor: Colors.tealAccent.shade400,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BubbleBottomBar(
-        opacity: .2,
-        currentIndex: _currentIndex,
-        onTap: onTabTapped,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-        elevation: 8,
-        // fabLocation: BubbleBottomBarFabLocation.center, //new
-        hasNotch: false, //new
-        hasInk: true, //new, gives a cute ink effect
-        inkColor: Colors.black12, //optional, uses theme color if not specified
-        items: <BubbleBottomBarItem>[
-          BubbleBottomBarItem(backgroundColor: Colors.tealAccent.shade700 /*Colors.tealAccent.shade700*/, icon: Icon(MaterialCommunityIcons.tournament, color: Colors.blueGrey.shade800), activeIcon: Icon(MaterialCommunityIcons.tournament, color: Colors.blueGrey.shade800), title: Text("Torneo")),
-          BubbleBottomBarItem(backgroundColor: Colors.transparent, icon: Icon(Icons.dashboard, color: Colors.transparent,), title: Text("")),
-          BubbleBottomBarItem(backgroundColor: Colors.transparent, icon: Icon(Icons.dashboard, color: Colors.transparent,), title: Text("")),
-          BubbleBottomBarItem(backgroundColor: Colors.tealAccent.shade700 /*Colors.tealAccent.shade700*/, icon: Icon(MaterialCommunityIcons.face, color: Colors.blueGrey.shade800), activeIcon: Icon(MaterialCommunityIcons.face_recognition, color: Colors.blueGrey.shade800), title: Text("Giocatore"))
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        icons: [
+          MaterialCommunityIcons.tournament,
+          MaterialCommunityIcons.face
         ],
+        splashColor: Colors.pinkAccent,
+        activeColor: Colors.tealAccent.shade700,
+        activeIndex: _currentIndex,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.softEdge,
+        notchAndCornersAnimation: animation,
+        leftCornerRadius: 16,
+        rightCornerRadius: 16,
+        splashSpeedInMilliseconds: 400,
+        onTap: (index) => setState(() {
+          _currentIndex = index;
+          _pageController.animateToPage(index,
+              duration: Duration(milliseconds: 500), curve: Curves.easeOut);
+        }),
+        //other params
       ),
     );
   }
 
-  void onTabTapped(int index) {
-    setState(() {
-      if(index == 0 || index == 1)
-        _currentIndex = 0;
-      else
-        _currentIndex = 3;
-    });
-  }
 
   void addGame() {
-        showCupertinoModalPopup(
-        context: context,
-        builder: (_) => Container(
-          height: 450,
-          child: Scaffold(body:AddGame()),
-        )
+    _animationController.reset();
+    showCupertinoModalPopup(
+      context: context,
+      builder: (_) => Container(
+        height: 450,
+        child: Scaffold(body:AddGame()),
+      )
     );
+    _animationController.forward();
   }
 }

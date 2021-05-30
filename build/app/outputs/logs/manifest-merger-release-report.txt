@@ -52,7 +52,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/matte
 	android:label
 		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:11:9-40
 	android:icon
-		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:12:9-45
 	android:name
 		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:10:9-57
 activity#com.fubalapp_mobile.MainActivity

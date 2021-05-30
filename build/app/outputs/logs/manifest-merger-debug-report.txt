@@ -5,9 +5,9 @@ INJECTED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/m
 INJECTED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:1:1-48:12
 INJECTED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:1:1-48:12
 MERGED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:1:1-48:12
-MERGED from [:flutter_secure_storage] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:connectivity] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-10:12
 MERGED from [:path_provider] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_secure_storage] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/bc7ef69787c1290fdf73dc8b9710bb46/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/a8bdbcda4da040918de738998abc4529/activity-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/1e4d7621da7fea8663cdd4a9c0a84415/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -55,7 +55,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/matte
 	android:label
 		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:11:9-40
 	android:icon
-		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:12:9-45
 	android:name
 		ADDED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:10:9-57
 activity#com.fubalapp_mobile.MainActivity
@@ -104,12 +104,12 @@ uses-sdk
 INJECTED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml
-MERGED from [:flutter_secure_storage] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:flutter_secure_storage] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:connectivity] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:connectivity] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_secure_storage] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_secure_storage] /home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/bc7ef69787c1290fdf73dc8b9710bb46/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/bc7ef69787c1290fdf73dc8b9710bb46/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/a8bdbcda4da040918de738998abc4529/activity-1.0.0/AndroidManifest.xml:20:5-22:41

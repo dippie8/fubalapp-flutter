@@ -17,7 +17,9 @@ class AddGame extends StatefulWidget {
 
 class _AddGameState extends State<AddGame> {
 
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool isButtonDisabled = false;
+
   GraphQLDataConfiguration graphQLConfiguration = GraphQLDataConfiguration();
 
 
@@ -225,9 +227,7 @@ class _AddGameState extends State<AddGame> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   RaisedButton(
-                    onPressed: () {
-                      saveGame();
-                    },
+                    onPressed: isButtonDisabled ? null : () { saveGame(); },
                     color: Colors.pinkAccent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -262,10 +262,13 @@ class _AddGameState extends State<AddGame> {
   }
 
   void saveGame() async {
+    setState(() {
+      this.isButtonDisabled = true;
+    });
     QueryMutation queryMutation = QueryMutation();
     GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
-    if(
+    if (
         _player1 != _player2 &&
         _player1 != _player3 &&
         _player1 != _player4 &&
@@ -301,13 +304,8 @@ class _AddGameState extends State<AddGame> {
             backgroundColor: Colors.pinkAccent,
             isDismissible: false,
           )..show(context);
-
         }
     } else {
-      // var storage = FlutterSecureStorage();
-      // var jwt = await storage.read(key: "jwt");
-      // debugPrint(jwt);
-      // debugPrint(j.getCurrentUserJwt());
       Flushbar(
         title:  "ERRORE!",
         message:  "Si è verificato un errore, controlla che i dati siano corretti e riprova",
@@ -327,6 +325,8 @@ class _AddGameState extends State<AddGame> {
         isDismissible: false,
       )..show(context);
     }
-
+    setState(() {
+      this.isButtonDisabled = false;
+    });
   }
 }

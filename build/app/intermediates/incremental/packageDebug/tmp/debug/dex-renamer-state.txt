@@ -1,4 +1,4 @@
-#Wed Jan 20 17:57:59 CET 2021
+#Sun May 30 12:51:33 CEST 2021
 base.0=/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

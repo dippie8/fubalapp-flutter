@@ -36,7 +36,7 @@ class _AppState extends State<App> {
         fontSize: 80
       )
     ),
-    image: new Image.asset('images/logo.jpg'),
+    image: new Image.asset('images/logo2.png'),
     backgroundColor: Colors.tealAccent.shade400,
     loaderColor: Colors.white,
     photoSize: 200,

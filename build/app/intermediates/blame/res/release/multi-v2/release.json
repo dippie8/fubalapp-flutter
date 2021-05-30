@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-ja_values-ja.arsc.flat",
+            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-fi_values-fi.arsc.flat",
             "map": [
                 {
-                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-ja/values-ja.xml",
+                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-fi/values-fi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-fi_values-fi.arsc.flat",
+            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-ja_values-ja.arsc.flat",
             "map": [
                 {
-                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-fi/values-fi.xml",
+                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-ja/values-ja.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -61,10 +61,10 @@
             ]
         },
         {
-            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-hy_values-hy.arsc.flat",
+            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-nb_values-nb.arsc.flat",
             "map": [
                 {
-                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-hy/values-hy.xml",
+                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-nb/values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -76,10 +76,10 @@
             ]
         },
         {
-            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-nb_values-nb.arsc.flat",
+            "outputFile": "/home/matteo/git/fubalapp-mobile/fubalapp_mobile/build/app/intermediates/res/merged/release/values-hy_values-hy.arsc.flat",
             "map": [
                 {
-                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-nb/values-nb.xml",
+                    "source": "/home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/res/values-hy/values-hy.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

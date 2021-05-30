@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fubalapp_mobile/league_components/standingView.dart';
 import 'package:fubalapp_mobile/models/Game.dart';
 import 'package:fubalapp_mobile/models/MedalTable.dart';
@@ -15,13 +16,20 @@ import 'login_Widget.dart';
 
 
 class League extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _LeagueState();
   }
+
 }
 
 class _LeagueState extends State<League> {
+
+
+  var storage = FlutterSecureStorage();
+
+  String numPlayers;
 
   List<Standing> standings = [
     Standing("#909090", "", 0, 0, 0),
@@ -30,6 +38,9 @@ class _LeagueState extends State<League> {
     Standing("#909090", "", 0, 0, 0),
     Standing("#909090", "", 0, 0, 0),
   ];
+
+  bool standingModePercentage = false;
+
   List<Game> games = [
     Game("", "", "", "", "#909090", "#909090", "#909090", "#909090", "1990-01-01 00:00", 0, 0, 0),
     Game("", "", "", "", "#909090", "#909090", "#909090", "#909090", "1990-01-01 00:00", 0, 0, 0),
@@ -41,6 +52,9 @@ class _LeagueState extends State<League> {
 
   RefreshController _refreshController = RefreshController(initialRefresh: false);
 
+  // _LeagueState(this.standings);
+
+
   @override
   Widget build(BuildContext context) {
     return SmartRefresher(
@@ -49,7 +63,7 @@ class _LeagueState extends State<League> {
           standing(),
           lastMatch(),
           medalTable(),
-          SliverToBoxAdapter(child: SizedBox(height: 40))
+          SliverToBoxAdapter(child: SizedBox(height: 100))
         ],
       ),
       controller: _refreshController,
@@ -61,8 +75,27 @@ class _LeagueState extends State<League> {
     );
   }
 
+  void getPlayersNumber() async {
+    await storage.read(key: "players").then((value) async {
+      this.numPlayers = value;
+      print("ho letto dallo storage: " + numPlayers);
+    });
+
+    setState(() {
+      standings.clear();
+      for(int i=0; i < int.parse(this.numPlayers); i++) {
+        this.standings.add(
+            Standing("#909090", "", 0, 0, 0)
+        );
+      }
+    });
+
+
+  }
+
   @override
   void initState() {
+    getPlayersNumber();
     super.initState();
     loadData();
     // Future.delayed(Duration(milliseconds: 200)).then((_) async {
@@ -72,7 +105,12 @@ class _LeagueState extends State<League> {
   }
 
   Widget standing() => SliverToBoxAdapter(
-    child: StandingView(standings),
+    child: StandingView(standings, standingModePercentage, () {
+      setState(() {
+        standingModePercentage = !standingModePercentage;
+
+      });
+    }),
   );
 
   Widget lastMatch() => SliverToBoxAdapter(
@@ -107,6 +145,8 @@ class _LeagueState extends State<League> {
           );
         });
       }
+
+      storage.write(key: "players", value: result.data["standings"].length.toString());
 
       medalTableRows.clear();
       for (var i = 0; i < result.data["players"].length; i++) {

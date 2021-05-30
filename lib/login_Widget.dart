@@ -70,14 +70,14 @@ class LoginScreen extends StatelessWidget {
     );
 
     return FlutterLogin(
-      title: '{FubalApp}',
+      title: 'FUBALAPP',
       theme: LoginTheme(
         titleStyle: TextStyle(
-          fontFamily: "sweetPurple",
-          fontSize: 80
+          fontFamily: "CoreSans",
+          fontSize: 50
         )
       ),
-      //logo: 'images/campo1.jpg',
+      // logo: 'images/logo.jpg',
       onLogin: _login,
       onSignup: _signup,
       onSubmitAnimationCompleted: () {

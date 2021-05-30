@@ -32,8 +32,8 @@
 22-->/home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:10:9-57
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.1.0] /home/matteo/.gradle/caches/transforms-2/files-2.1/3aca06f31ecc71b64207adcef25bcf53/core-1.1.0/AndroidManifest.xml:24:18-86
-24        android:icon="@mipmap/ic_launcher"
-24-->/home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:12:9-43
+24        android:icon="@mipmap/launcher_icon"
+24-->/home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:12:9-45
 25        android:label="fubalapp_mobile" >
 25-->/home/matteo/git/fubalapp-mobile/fubalapp_mobile/android/app/src/main/AndroidManifest.xml:11:9-40
 26        <activity
